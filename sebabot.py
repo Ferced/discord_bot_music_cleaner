@@ -34,14 +34,14 @@ async def on_ready():
 	
 	channel = get_channel_by_name("general",client)
 	print(f'{client.user.name} se acaba de prender, se acabo la joda.')
-	def check_msg(msg):
-		if len(msg.content) > 1 and any(msg.content.startswith(item) for item in commands_not_accepted):
-			return True
-		if str(msg.author)  in authors_not_accepted:
-			return True
-		return False
-	await channel.send('Borrando mensajes al pedo... ',delete_after=5)
-	deleted = await channel.purge(limit=100, check=check_msg)
+	# def check_msg(msg):
+	# 	if len(msg.content) > 1 and any(msg.content.startswith(item) for item in commands_not_accepted):
+	# 		return True
+	# 	if str(msg.author)  in authors_not_accepted:
+	# 		return True
+	# 	return False
+	# await channel.send('Borrando mensajes al pedo... ',delete_after=5)
+	# deleted = await channel.purge(limit=100, check=check_msg)
 @client.event
 async def on_message(message):
 	channel = message.channel
